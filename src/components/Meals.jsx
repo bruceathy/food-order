@@ -1,7 +1,6 @@
-import { use } from "react";
 import { useState, useEffect } from "react";
 
-export default function fetchMeals() {
+export default function Meals() {
   const [loadedMeals, setLoadedMeals] = useState([]);
   useEffect(() => {
     async function fetchMeals() {
@@ -14,6 +13,8 @@ export default function fetchMeals() {
       const meals = await res.json();
       setLoadedMeals(meals);
     }
+
+    fetchMeals();
   }, []);
 
   return (
