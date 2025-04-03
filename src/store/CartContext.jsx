@@ -1,4 +1,3 @@
-import { use } from "react";
 import { createContext, useReducer } from "react";
 
 const CartContext = createContext({
@@ -35,7 +34,9 @@ function cartReducer(state, action) {
   }
 
   if (action.type === "REMOVE") {
-    //remove items
+    const existingCartItemIndex = state.items.findIndex(
+      (item) => item.id === action.item.id
+    );
   }
   return state;
 }
